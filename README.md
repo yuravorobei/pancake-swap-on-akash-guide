@@ -89,7 +89,7 @@ As a base image used here Alpine-version of `nginx: alpine`, it is a lightweight
 Next, the project build results obtained in the previous step are copied to the working directory and the `ngix.conf` file, which will be created in the next step of the tutorial, copied to the Nginx configuration directory. Then we open port `80`, you can specify any other. The container will wait for connections on this port to web-server and the same port will need to be specified further in the web server configuration. The last line of the file is used to start Nginx in foreground so that the Docker container does not close immediately after starting.
 
 
-### 1.2 nginx.conf
+### 1.3 nginx.conf
 For the Nginx web server to work correctly, you need to create a configuration file:
   
   ```bash
@@ -138,7 +138,7 @@ This configuration is written based on standard examples, you can add or change 
 Currently the most important fields here are `http.server.listen` is the port that the web server will listen to (in my case port `80`) and` http.server.root` is the application working directory (`/app`).
 
 
-### 1.3 .dockerignore
+### 1.4 .dockerignore
 There are additional files and folders in the project directory that do not need to be added to the Docker image to save weight and time to build the image. To do this, a file named `.dockerignore` is used, which lists all files and directories that will be ignored when building the image. Let's create the file:
   ```bash
   $ nano .dockerignore
@@ -157,7 +157,7 @@ There are additional files and folders in the project directory that do not need
   ```
 
 
-### 1.4 Building the Docker image
+### 1.5 Building the Docker image
 To build the Docker image run the following command:
   ```bash
   $ docker build -t pancake-swap .
@@ -165,7 +165,7 @@ To build the Docker image run the following command:
 Any other name can be used here instead of `pancake-swap`, most importantly, do not forget to also change this name in the following commands. Waiting for the completion of the function.
 
 
-### 1.5 Publishing the image
+### 1.6 Publishing the image
 To transfer the created image to the cloud server, you need to share it. To do this I will push the image to the [Docker Hub](https://hub.docker.com/). Log into the Docker Hub from the command line. Enter the following command, replace `<your_hub_username>` with your Docker Hub usesrname:
   ```bash
   $ docker login --username=<your_hub_username>
