@@ -460,7 +460,7 @@ You should see a response similar to:
       owner: akash1kfd3adu7sgcu2vxd3ucc3pehmrautp25kxenn5
       provider: akash15ql9ycjkkxhpc2nxtnf78qqjguwzz8gc4ue7wl
     price:
-      amount: "718"
+      amount: "1310"
       denom: uakt
     state: closed
   pagination:
